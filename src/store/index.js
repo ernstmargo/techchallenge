@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import _ from 'lodash'
+import  {uuid}  from 'vue-uuid';
 
 Vue.use(Vuex)
 
@@ -11,10 +12,6 @@ export default new Vuex.Store({
     newsentry: {},
     searchWord: null,
     filteredNews: null,
-    sortedNews: null,
-    sortOrder: null,
-    sortBy: null,
-
   },
   getters: {
     allNews: (state) => state.news,
@@ -24,21 +21,29 @@ export default new Vuex.Store({
     getSearchWord: (state) => state.searchWord,
 
     getFilteredNews: (state) => state.filteredNews,
-
-    getSortedNews: (state) =>  state.sortedNews,
   },
   mutations: {
     SET_NEWS(state, news) {
-      state.news = news
+      state.news =  news.map((item) => {
+            return {
+              id: uuid.v4(),
+              title: item.title,
+              body: item.body,
+              author: item.author,
+
+            }})
+    },
+    EDIT_NEWSENTRY (state, data) {
+    let newentry=state.news.find(a => a.id === data.id)
+         newentry.title=data.title
+          newentry.body=data.body
+          newentry.auth=data.author
+
 
     },
     ADD_NEWSENTRY (state, data){
-      state.news.push(data)
-     // state.news = Object.assign({}, data)
-
-
+        state.news.push(data)
     },
-
     FILTERED_NEWS (state, word) {
       if (!(word) || word === '{}') {
         state.searchWord = null
@@ -51,9 +56,7 @@ export default new Vuex.Store({
         })
       }
     },
-
     SORT_NEWS (state,  {order, attr}){
-
       state.filteredNews = _.orderBy(state.news, attr , order);
     },
   },
@@ -71,7 +74,6 @@ export default new Vuex.Store({
     SORT_NEWS ({commit}, payload) {
       commit('SORT_NEWS',  payload);
       console.log('action ')
-
     },
     ADD_NEWSENTRY ({ commit }, data ) {
       commit('ADD_NEWSENTRY ', data )

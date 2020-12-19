@@ -13,13 +13,15 @@
 </template>
 
 <script>
+    import  {uuid}  from 'vue-uuid';
     import { mapState, mapMutations } from 'vuex'
 
     export default {
         name: "Form",
+        props: ['parentmessage'],
         data () {
             return {
-                inputData: {}
+                inputData: []
             }
         },
         computed: {
@@ -27,15 +29,29 @@
                 'news'
             ])
         },
+        mounted() {
+            this.inputData = Object.assign({}, this.parentmessage);
+            console.log('mount form')
+        },
 
         methods: {
             ...mapMutations([
-                'ADD_NEWSENTRY'
+                'ADD_NEWSENTRY',
+                'EDIT_NEWSENTRY'
             ]),
             submitForm: function () {
+                if (this.inputData.id) {
+                     this.EDIT_NEWSENTRY(this.inputData)
+                    return
+                }
+                this.inputData.id= uuid.v4()
                 this.ADD_NEWSENTRY(this.inputData)
                 this.inputData=[]
-            }
+            },
+
+
+
+
         }
     }
 </script>

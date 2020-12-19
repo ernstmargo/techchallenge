@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": " A Sunny weather in London",
+    "title": "A Sunny weather in London",
     "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus sem purus, sit amet scelerisque orci volutpat sit amet. Integer accumsan purus tortor, a ullamcorper metus semper a. Praesent non feugiat quam, ullamcorper finibus erat. Cras facilisis nibh id ipsum hendrerit, id posuere sapien interdum.",
     "author": "unknown"
 
@@ -15,8 +15,8 @@
   },
   {
     "id": 3,
-    "title": " B Los Angeles",
-    "body": "c",
+    "title": "B Los Angeles",
+    "body": "Pellentesque eu tincidunt tortor aliquam. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Habitant morbi tristique senectus et netus et malesuada fames. Sagittis vitae et leo duis ut diam quam. Sed vulputate mi sit amet mauris commodo quis.",
     "author": "john"
 
   }
