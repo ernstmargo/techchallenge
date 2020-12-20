@@ -1,4 +1,4 @@
-# techchallenge2
+# techchallenge
 
 ## The following tasks are finished: 
 
