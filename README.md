@@ -1,24 +1,21 @@
 # techchallenge2
 
-## Project setup
-```
-npm install
-```
+## The following tasks are finished: 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Build a new Newsfeed with cards that each contain a `title` `body` `author`.
+The demo data for this task are from file news.json, since there were no request to use API.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Make HTML Form to create News.
+The form on the bottom of the page. It saves the added news only in vuex store. 
 
-### Run your unit tests
-```
-npm run test:unit
-```
+### Make a news entry editable.
+The same Form is used for edit. It pops up on Bootstrap model. 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Make a search field that filters the news by searching through the title.
+
+### Add a sort option and let the user decide to search for title body author in a ASC or DESC direction.
+
+### The additional Task: add 3 Sample pages. 
+Page 1, Page 2, Page 3 in nav bar
+
+
