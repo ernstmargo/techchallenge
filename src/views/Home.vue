@@ -1,9 +1,10 @@
 <template>
   <div class="home">
     <NewsList @clicked="edit"></NewsList>
+    <h3>Create</h3>
     <Form :parentmessage="parentmessage" />
     <div>
-      <b-modal id="modal-1" title="BootstrapVue">
+      <b-modal id="modal-1" hide-footer="true" title="Edit">
         <Form :parentmessage="parentmessage" />
       </b-modal>
     </div>
@@ -12,11 +13,8 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
 import NewsList from "../components/NewsList";
 import Form from "../components/Form";
-
-
 
 export default {
   name: 'Home',
@@ -28,11 +26,9 @@ export default {
      }
   },
   components: {
-    HelloWorld,
     NewsList,
     Form
   },
-
   methods: {
     edit (news) {
       console.log(news)

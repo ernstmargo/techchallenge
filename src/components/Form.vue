@@ -6,8 +6,8 @@
             <label > body </label>
             <input name="body" v-model="inputData.body">
             <label > Author </label>
-            <input name="author" v-model="inputData.author">
-            <input type="submit">
+            <input name="author" v-model="inputData.author"> <br/>
+            <input class="btn btn-secondary" type="submit">
         </form>
     </div>
 </template>
@@ -24,16 +24,11 @@
                 inputData: []
             }
         },
-        computed: {
-            ...mapState([
-                'news'
-            ])
-        },
+
         mounted() {
             this.inputData = Object.assign({}, this.parentmessage);
             console.log('mount form')
         },
-
         methods: {
             ...mapMutations([
                 'ADD_NEWSENTRY',
@@ -48,11 +43,7 @@
                 this.ADD_NEWSENTRY(this.inputData)
                 this.inputData=[]
             },
-
-
-
-
-        }
+       }
     }
 </script>
 

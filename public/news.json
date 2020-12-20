@@ -1,24 +1,38 @@
 [
   {
-    "id": 1,
-    "title": "A Sunny weather in London",
+    "title": "At vero eos et accusam",
     "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus sem purus, sit amet scelerisque orci volutpat sit amet. Integer accumsan purus tortor, a ullamcorper metus semper a. Praesent non feugiat quam, ullamcorper finibus erat. Cras facilisis nibh id ipsum hendrerit, id posuere sapien interdum.",
     "author": "unknown"
 
   },
   {
-    "id": 2,
-    "title": "C  New York",
-    "body": "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\n",
-    "author": "anna"
+    "title": "Ut wisi enim ad minim veniam",
+    "body": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+    "author": "Anna"
 
   },
   {
-    "id": 3,
+    "title": "Stet clita kasd gubergren",
+    "body": "Pellentesque eu tincidunt tortor aliquam. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Nibh ipsum consequat nisl vel pretium lectus quam id leo.",
+    "author": "John"
+
+  },
+  {
+    "title": "Duis autem vel eum iriure dolor",
+    "body": "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. ",
+    "author": "Bob"
+
+  },
+  {
     "title": "B Los Angeles",
-    "body": "Pellentesque eu tincidunt tortor aliquam. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Habitant morbi tristique senectus et netus et malesuada fames. Sagittis vitae et leo duis ut diam quam. Sed vulputate mi sit amet mauris commodo quis.",
-    "author": "john"
+    "body": "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. ",
+    "author": "Sam"
+
+  },
+  {
+    "title": "At vero eos et accusam",
+    "body": "Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo",
+    "author": "Chris"
 
   }
-
 ]

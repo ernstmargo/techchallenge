@@ -24,7 +24,7 @@
                 <p>{{newentry.author}}</p>
             </div>
             <div class="card-footer">
-                <b-button  :id=newentry.id v-b-modal.modal-1  @click="edit(newentry.id)">Launch demo modal</b-button>
+                <b-button  :id=newentry.id v-b-modal.modal-1  @click="edit(newentry.id)">Edit</b-button>
             </div>
 
         </div>
@@ -35,29 +35,16 @@
 </template>
 
 <script>
-import Form from "./Form";
+import { mapMutations } from 'vuex'
 
     export default {
-        comments:
-            {
-                Form
-            },
         name: 'NewsList',
-
         data () {
             return {
                 msg: 'Welcome to my Vuex Store',
             }
         },
-
         computed: {
-            gettersnews() {
-                return this.$store.getters.allNews
-            },
-            news() {
-                return this.$store.state.news
-            },
-
             filteredNews () {
                 try {
                     let a = (this.$store.getters.getFilteredNews || this.$store.getters.allNews)
@@ -72,7 +59,7 @@ import Form from "./Form";
                     return this.$store.state.searchWord
                 },
                 set (value) {
-                    this.$store.dispatch('FILTERED_NEWS', value)
+                    this.FILTERED_NEWS(value)
                 }
             }
         },
@@ -80,8 +67,12 @@ import Form from "./Form";
             this.$store.dispatch("getNews");
         },
         methods:{
+            ...mapMutations([,
+                'FILTERED_NEWS',
+                'SORT_NEWS',
+            ]),
             sort (order, attr) {
-                this.$store.dispatch('SORT_NEWS', {order, attr} );
+                this.SORT_NEWS({order, attr})
             },
             edit(id)
             {
@@ -95,5 +86,7 @@ import Form from "./Form";
 </script>
 
 <style scoped>
-
+    .card {
+        margin-bottom: 20px;
+    }
 </style>

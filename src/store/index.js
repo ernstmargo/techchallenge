@@ -15,11 +15,8 @@ export default new Vuex.Store({
   },
   getters: {
     allNews: (state) => state.news,
-
     getNewsentry: (state) => state.newsentry,
-
     getSearchWord: (state) => state.searchWord,
-
     getFilteredNews: (state) => state.filteredNews,
   },
   mutations: {
@@ -30,16 +27,13 @@ export default new Vuex.Store({
               title: item.title,
               body: item.body,
               author: item.author,
-
             }})
     },
     EDIT_NEWSENTRY (state, data) {
     let newentry=state.news.find(a => a.id === data.id)
          newentry.title=data.title
           newentry.body=data.body
-          newentry.auth=data.author
-
-
+          newentry.author=data.author
     },
     ADD_NEWSENTRY (state, data){
         state.news.push(data)
@@ -48,13 +42,13 @@ export default new Vuex.Store({
       if (!(word) || word === '{}') {
         state.searchWord = null
         state.filteredCourses = null
-      } else {
+        return
+      }
         state.searchWord = word
         word = word.trim().toLowerCase()
         state.filteredNews = state.news.filter((newsentry) => {
           return  newsentry.title.toLowerCase().includes(word)
         })
-      }
     },
     SORT_NEWS (state,  {order, attr}){
       state.filteredNews = _.orderBy(state.news, attr , order);
@@ -67,17 +61,6 @@ export default new Vuex.Store({
             commit('SET_NEWS', response.data)
           })
     },
-    FILTERED_NEWS ({ commit }, word) {
-      commit('FILTERED_NEWS', word)
-      console.log('action filtered news')
-    },
-    SORT_NEWS ({commit}, payload) {
-      commit('SORT_NEWS',  payload);
-      console.log('action ')
-    },
-    ADD_NEWSENTRY ({ commit }, data ) {
-      commit('ADD_NEWSENTRY ', data )
-    }
   },
   modules: {
   }
